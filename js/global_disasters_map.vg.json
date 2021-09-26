@@ -1,0 +1,14 @@
+{
+	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+	"width": 800,
+	"height": 500,
+	"title": "World Map of Natural Disasters 1960-2018?",
+	"projection": {"type": "equalEarth"},
+	"layer": [
+		{
+			"data": {
+				"url":
+			}
+		}
+	]
+}
