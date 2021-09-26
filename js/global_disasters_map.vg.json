@@ -2,13 +2,57 @@
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 	"width": 800,
 	"height": 500,
-	"title": "World Map of Natural Disasters 1960-2018?",
+	"title": "World Map of Natural Disasters 1960-2018",
 	"projection": {"type": "equalEarth"},
-	"layer": [
+	"params": [
 		{
-			"data": {
-				"url":
-			}
+			"name": "Year",
+			"value": 2018,
+			"bind": {"input": "range", "min": 1960, "max": 2018, "step": 1}
 		}
-	]
+	],
+	"layer": [
+			{
+				"data": {
+					"url": "data/countries.topo.json",
+					"format": {"type":"topojson", "feature":"ne_50m_admin_0_countries"}
+				},
+				"mark": {"type":"geoshape", "fill": "lightgray", "stroke": "darkgray"}
+			},
+			{
+				"data": {
+					"url": "data/pend-gdis-1960-2018-disasterlocations.csv"
+				},
+				"params": [
+					{
+						"name": "DisasterTypeSelector",
+						"select": {"type": "point", "fields": ["disastertype"]},
+						"bind": "legend"
+					}
+				],
+				"transform": [
+					{"filter": "datum.year <= Year"}
+				],
+				"mark": {
+					"type": "circle",
+					"size": 10
+				},
+				"encoding": {
+					"longitude": {"field": "longitude", "type": "quantitative"},
+					"latitude": {"field": "latitude", "type": "quantitative"},
+					"color": {
+						"field": "disastertype",
+						"type": "nominal",
+						"scale": {"scheme": "dark2"}
+					},
+					"tooltip": [
+						{"field": "disastertype", "type": "nominal", "title": "Disaster"},
+						{"field": "country", "type": "nominal", "title": "Country"},
+						{"field": "location", "type": "nominal", "title": "Location"},
+						{"field": "year", "type": "ordinal", "title": "Year"}
+					]
+				}
+			}
+		],
+	"view": {"fill": "#8fb5ca"}
 }
