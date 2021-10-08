@@ -3,13 +3,6 @@
 	"width": 800,
 	"height": 500,
 	"title": "World Map of Natural Disasters 1980-2018",
-	"params": [
-		{
-			"name": "Year",
-			"value": 2018,
-			"bind": {"input": "range", "min": 1980, "max": 2018, "step": 1}
-		}
-	],
 	"data": {
 		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/pend-gdis-1960-2018-disasterlocations.csv"
 	},
@@ -29,7 +22,6 @@
 				},
 				{
 					"transform": [
-						{"filter": "datum.year <= Year"}
 					],
 					"mark": {
 						"type": "circle",
@@ -41,11 +33,7 @@
 						"color": {
 							"field": "disastertype",
 							"type": "nominal",
-							"scale": {"scheme": "dark2"},
-							"condition": {
-								"test": "datum.year >= Year",
-								"value": "grey"
-							}
+							"scale": {"scheme": "dark2"}
 						},
 						"tooltip": [
 							{"field": "disastertype", "type": "nominal", "title": "Disaster"},
@@ -60,7 +48,17 @@
 		{
 			"data": {
 				"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/summed_disastertype_year.csv"
-			}
+			},
+			"transform": [
+				{"filter": "datum.year >= 1980"}
+			],
+			"params": [{
+				"name": "YearLineSelector",
+				"select": {
+					"type": "interval",
+					"encoding": ["x"]
+				}
+			}],
 			"width": 922,
 			"mark": "line",
 			"encoding": {
