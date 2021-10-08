@@ -1,0 +1,347 @@
+disastertype,year,count
+Drought,1960,0
+Drought,1961,0
+Drought,1962,0
+Drought,1963,0
+Drought,1964,4
+Drought,1965,4
+Drought,1966,5
+Drought,1967,2
+Drought,1968,0
+Drought,1969,8
+Drought,1970,0
+Drought,1971,0
+Drought,1972,1
+Drought,1973,4
+Drought,1974,1
+Drought,1975,0
+Drought,1976,2
+Drought,1977,3
+Drought,1978,9
+Drought,1979,9
+Drought,1980,4
+Drought,1981,17
+Drought,1982,14
+Drought,1983,20
+Drought,1984,9
+Drought,1985,2
+Drought,1986,2
+Drought,1987,44
+Drought,1988,22
+Drought,1989,12
+Drought,1990,23
+Drought,1991,11
+Drought,1992,8
+Drought,1993,14
+Drought,1994,17
+Drought,1995,13
+Drought,1996,9
+Drought,1997,77
+Drought,1998,25
+Drought,1999,106
+Drought,2000,186
+Drought,2001,155
+Drought,2002,173
+Drought,2003,103
+Drought,2004,72
+Drought,2005,104
+Drought,2006,45
+Drought,2007,48
+Drought,2008,104
+Drought,2009,384
+Drought,2010,152
+Drought,2011,141
+Drought,2012,199
+Drought,2013,53
+Drought,2014,147
+Drought,2015,186
+Drought,2016,114
+Drought,2017,46
+Drought,2018,25
+Flood,1960,4
+Flood,1961,3
+Flood,1962,1
+Flood,1963,3
+Flood,1964,20
+Flood,1965,19
+Flood,1966,21
+Flood,1967,49
+Flood,1968,18
+Flood,1969,56
+Flood,1970,36
+Flood,1971,18
+Flood,1972,9
+Flood,1973,17
+Flood,1974,25
+Flood,1975,25
+Flood,1976,20
+Flood,1977,32
+Flood,1978,23
+Flood,1979,21
+Flood,1980,75
+Flood,1981,35
+Flood,1982,60
+Flood,1983,44
+Flood,1984,71
+Flood,1985,116
+Flood,1986,112
+Flood,1987,94
+Flood,1988,176
+Flood,1989,90
+Flood,1990,123
+Flood,1991,233
+Flood,1992,174
+Flood,1993,263
+Flood,1994,255
+Flood,1995,279
+Flood,1996,317
+Flood,1997,280
+Flood,1998,311
+Flood,1999,365
+Flood,2000,553
+Flood,2001,522
+Flood,2002,578
+Flood,2003,668
+Flood,2004,491
+Flood,2005,809
+Flood,2006,736
+Flood,2007,961
+Flood,2008,842
+Flood,2009,750
+Flood,2010,871
+Flood,2011,776
+Flood,2012,593
+Flood,2013,718
+Flood,2014,561
+Flood,2015,768
+Flood,2016,839
+Flood,2017,948
+Flood,2018,461
+Landslide,1960,1
+Landslide,1961,1
+Landslide,1962,0
+Landslide,1963,2
+Landslide,1964,0
+Landslide,1965,6
+Landslide,1966,3
+Landslide,1967,2
+Landslide,1968,4
+Landslide,1969,1
+Landslide,1970,5
+Landslide,1971,3
+Landslide,1972,4
+Landslide,1973,3
+Landslide,1974,7
+Landslide,1975,4
+Landslide,1976,5
+Landslide,1977,2
+Landslide,1978,1
+Landslide,1979,8
+Landslide,1980,4
+Landslide,1981,3
+Landslide,1982,13
+Landslide,1983,10
+Landslide,1984,3
+Landslide,1985,3
+Landslide,1986,5
+Landslide,1987,14
+Landslide,1988,19
+Landslide,1989,13
+Landslide,1990,4
+Landslide,1991,9
+Landslide,1992,11
+Landslide,1993,25
+Landslide,1994,20
+Landslide,1995,31
+Landslide,1996,27
+Landslide,1997,23
+Landslide,1998,28
+Landslide,1999,16
+Landslide,2000,40
+Landslide,2001,34
+Landslide,2002,40
+Landslide,2003,42
+Landslide,2004,17
+Landslide,2005,14
+Landslide,2006,58
+Landslide,2007,14
+Landslide,2008,16
+Landslide,2009,38
+Landslide,2010,64
+Landslide,2011,27
+Landslide,2012,17
+Landslide,2013,14
+Landslide,2014,26
+Landslide,2015,52
+Landslide,2016,46
+Landslide,2017,57
+Landslide,2018,22
+Earthquake,1960,8
+Earthquake,1961,1
+Earthquake,1962,2
+Earthquake,1963,18
+Earthquake,1964,12
+Earthquake,1965,8
+Earthquake,1966,9
+Earthquake,1967,10
+Earthquake,1968,17
+Earthquake,1969,8
+Earthquake,1970,16
+Earthquake,1971,7
+Earthquake,1972,5
+Earthquake,1973,12
+Earthquake,1974,5
+Earthquake,1975,3
+Earthquake,1976,19
+Earthquake,1977,21
+Earthquake,1978,10
+Earthquake,1979,32
+Earthquake,1980,61
+Earthquake,1981,20
+Earthquake,1982,18
+Earthquake,1983,82
+Earthquake,1984,20
+Earthquake,1985,34
+Earthquake,1986,26
+Earthquake,1987,23
+Earthquake,1988,24
+Earthquake,1989,31
+Earthquake,1990,60
+Earthquake,1991,43
+Earthquake,1992,46
+Earthquake,1993,19
+Earthquake,1994,82
+Earthquake,1995,65
+Earthquake,1996,22
+Earthquake,1997,24
+Earthquake,1998,53
+Earthquake,1999,70
+Earthquake,2000,47
+Earthquake,2001,75
+Earthquake,2002,54
+Earthquake,2003,80
+Earthquake,2004,143
+Earthquake,2005,71
+Earthquake,2006,58
+Earthquake,2007,55
+Earthquake,2008,48
+Earthquake,2009,81
+Earthquake,2010,47
+Earthquake,2011,94
+Earthquake,2012,82
+Earthquake,2013,76
+Earthquake,2014,53
+Earthquake,2015,94
+Earthquake,2016,78
+Earthquake,2017,69
+Earthquake,2018,51
+Volcanic activity,1960,0
+Volcanic activity,1961,0
+Volcanic activity,1962,0
+Volcanic activity,1963,0
+Volcanic activity,1964,0
+Volcanic activity,1965,0
+Volcanic activity,1966,0
+Volcanic activity,1967,0
+Volcanic activity,1968,0
+Volcanic activity,1969,0
+Volcanic activity,1970,0
+Volcanic activity,1971,0
+Volcanic activity,1972,0
+Volcanic activity,1973,0
+Volcanic activity,1974,0
+Volcanic activity,1975,0
+Volcanic activity,1976,0
+Volcanic activity,1977,0
+Volcanic activity,1978,0
+Volcanic activity,1979,0
+Volcanic activity,1980,0
+Volcanic activity,1981,0
+Volcanic activity,1982,0
+Volcanic activity,1983,0
+Volcanic activity,1984,0
+Volcanic activity,1985,0
+Volcanic activity,1986,0
+Volcanic activity,1987,0
+Volcanic activity,1988,0
+Volcanic activity,1989,0
+Volcanic activity,1990,0
+Volcanic activity,1991,0
+Volcanic activity,1992,0
+Volcanic activity,1993,0
+Volcanic activity,1994,0
+Volcanic activity,1995,0
+Volcanic activity,1996,0
+Volcanic activity,1997,0
+Volcanic activity,1998,0
+Volcanic activity,1999,0
+Volcanic activity,2000,0
+Volcanic activity,2001,0
+Volcanic activity,2002,0
+Volcanic activity,2003,0
+Volcanic activity,2004,0
+Volcanic activity,2005,0
+Volcanic activity,2006,0
+Volcanic activity,2007,0
+Volcanic activity,2008,0
+Volcanic activity,2009,0
+Volcanic activity,2010,0
+Volcanic activity,2011,0
+Volcanic activity,2012,0
+Volcanic activity,2013,0
+Volcanic activity,2014,0
+Volcanic activity,2015,0
+Volcanic activity,2016,0
+Volcanic activity,2017,0
+Volcanic activity,2018,0
+Volcanic Activity,2008,27
+Volcanic Activity,2011,18
+Volcanic Activity,2015,18
+Volcanic Activity,2004,8
+Volcanic Activity,2007,10
+Volcanic Activity,2001,18
+Volcanic Activity,2006,50
+Volcanic Activity,1985,8
+Volcanic Activity,2005,15
+Volcanic Activity,2002,16
+Volcanic Activity,1999,12
+Volcanic Activity,2003,8
+Volcanic Activity,2013,5
+Volcanic Activity,2000,8
+Volcanic Activity,2018,18
+Volcanic Activity,2010,19
+Volcanic Activity,1969,2
+Volcanic Activity,1984,10
+Volcanic Activity,1991,12
+Volcanic Activity,1994,6
+Volcanic Activity,1997,4
+Volcanic Activity,2014,33
+Volcanic Activity,2017,2
+Volcanic Activity,1993,8
+Volcanic Activity,2009,6
+Volcanic Activity,1986,3
+Volcanic Activity,1964,1
+Volcanic Activity,1988,4
+Volcanic Activity,1977,4
+Volcanic Activity,1963,2
+Volcanic Activity,1975,2
+Volcanic Activity,1976,1
+Volcanic Activity,1983,5
+Volcanic Activity,1996,3
+Volcanic Activity,1998,3
+Volcanic Activity,2012,3
+Volcanic Activity,1973,1
+Volcanic Activity,1966,3
+Volcanic Activity,1979,5
+Volcanic Activity,1980,2
+Volcanic Activity,1981,1
+Volcanic Activity,1982,2
+Volcanic Activity,1987,1
+Volcanic Activity,1989,1
+Volcanic Activity,1990,2
+Volcanic Activity,1992,7
+Volcanic Activity,1995,2
+Volcanic Activity,1971,2
+Volcanic Activity,1968,1
+Volcanic Activity,1978,1
+Volcanic Activity,1960,1
