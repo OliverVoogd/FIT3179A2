@@ -1,0 +1,40 @@
+{
+	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+	"title": "Disasters by Country 1980-2018",
+	"width": 800,
+	"data": {
+		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/pend-gdis-1960-2018-disasterlocations.csv"
+	},
+	"params":[
+		{
+			"name": "CountrySelect",
+			"value": ["Australia", "England", "Japan", "China", "India", "Indonesia", "Chile", "Turkey"]
+		}
+	],
+	"layer": [
+		{
+			"transform": [
+				{"filter": "datum.year >= 1980"},
+				{"filter": "indexof(CountrySelect, datum.country) >= 0"}
+			],
+			"mark": "bar",
+			"encoding": {
+				"x": {
+					"field": "country", 
+					"type": "nominal",
+					"axis": {
+						"labelAngle": 0
+					},
+					"title": "Country"
+				},
+				"y": {"aggregate": "count", "type": "quantitative", "title": "Disaster per Country"},
+				"color": {
+					"field": "disastertype",
+					"type": "nominal",
+					"scale": {"scheme": "dark2"},
+					"legend": null
+				}
+			}
+		}
+	]
+}

@@ -1,4 +1,8 @@
-#map_container {
+.centre_container {
 	display: flex;
 	justify-content: center;
+}
+
+#select_countries {
+	padding-right: 100px;
 }

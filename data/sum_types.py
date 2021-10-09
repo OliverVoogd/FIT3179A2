@@ -5,7 +5,7 @@ year = 4
 dtype = 13 
 
 
-for disaster in ["Drought", "Flood", "Landslide", "Earthquake", "Volcanic activity"]:
+for disaster in ["Drought", "Flood", "Landslide", "Earthquake", "Volcanic Activity"]:
 	d[disaster] = {"1960": 0}
 	for y in range(1961, 2019):
 		d[disaster][str(y)] = 0
