@@ -1,7 +1,7 @@
 {
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 	"data": {
-		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/pend-gdis-1960-2018-disasterlocations.csv"
+		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac.csv"
 	},
 	"params": [
 		{
@@ -40,7 +40,10 @@
 					],
 					"mark": {
 						"type": "circle",
-						"size": 10
+						"opacity": 0.8,
+						"stroke": "black",
+						"strokeWidth": 0.2,
+						"size": 15
 					},
 					"params": [
 						{
@@ -61,7 +64,7 @@
 							}
 						},
 						"opacity": {
-							"condition": {"param": "DisasterTypeSelect", "value": 1},
+							"condition": {"param": "DisasterTypeSelect", "value": 0.8},
 							"value": 0.1
 						},
 						"tooltip": [

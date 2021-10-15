@@ -1,8 +1,18 @@
+
+.vis_body {
+	display: flex;
+	justify-content: center;
+	width:100vw;
+}
+
+
 .centre_container {
 	display: flex;
 	justify-content: center;
+	width: 80vw;
+	height: 250pt;
 }
 
 #select_countries {
-	padding-right: 100px;
+	height: 100%;
 }

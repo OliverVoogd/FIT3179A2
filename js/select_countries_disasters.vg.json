@@ -1,7 +1,6 @@
 {
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 	"title": "Disasters by Country 1980-2018",
-	"width": 800,
 	"data": {
 		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/pend-gdis-1960-2018-disasterlocations.csv"
 	},
@@ -11,30 +10,56 @@
 			"value": ["Australia", "England", "Japan", "China", "India", "Indonesia", "Chile", "Turkey"]
 		}
 	],
-	"layer": [
+	"hconcat": [
 		{
-			"transform": [
-				{"filter": "datum.year >= 1980"},
-				{"filter": "indexof(CountrySelect, datum.country) >= 0"}
-			],
-			"mark": "bar",
-			"encoding": {
-				"x": {
-					"field": "country", 
-					"type": "nominal",
-					"axis": {
-						"labelAngle": 0
+			"height": "container",
+			"width": 400,
+			"projection": {"type": "equalEarth"},
+			"layer": [
+				{
+					
+					"data": {
+						"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/countries.topo.json",
+						"format": {"type":"topojson", "feature":"ne_50m_admin_0_countries"}
 					},
-					"title": "Country"
-				},
-				"y": {"aggregate": "count", "type": "quantitative", "title": "Disaster per Country"},
-				"color": {
-					"field": "disastertype",
-					"type": "nominal",
-					"scale": {"scheme": "dark2"},
-					"legend": null
+					"mark": {"type":"geoshape", "fill": "lightgray", "stroke": "darkgray"}
 				}
-			}
+			]
+		},
+		{
+			"height": "container",
+			"width": 400,
+			"layer": [
+				{
+					"transform": [
+						{"filter": "datum.year >= 1980"},
+						{"filter": "indexof(CountrySelect, datum.country) >= 0"}
+					],
+					"mark": "bar",
+					"encoding": {
+						"x": {
+							"field": "country", 
+							"type": "nominal",
+							"axis": {
+								"labelAngle": 0
+							},
+							"title": "Country"
+						},
+						"y": {"aggregate": "count", "type": "quantitative", "title": "Disaster per Country"},
+						"color": {
+							"field": "disastertype",
+							"type": "nominal",
+							"scale": {"scheme": "dark2"},
+							"legend": null
+						}
+					}
+				}
+			]
 		}
-	]
+	],
+	"config": {
+		"concat": {
+			"spacing": 50
+		}
+	}
 }

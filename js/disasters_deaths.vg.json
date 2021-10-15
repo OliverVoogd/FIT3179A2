@@ -1,0 +1,21 @@
+{
+	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+	"data": {
+		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac.csv"
+	},
+	"title": "Deaths per Disaster",
+	"mark": {
+		"type": "circle",
+		"opacity": 0.8,
+		"stroke": "black",
+		"strokeWidth": 1
+	},
+	"encoding": {
+		"x": {
+			"field": "dateTotal Death",
+			"type": "temporal"
+		},
+		"y": {"field": "disastertype", "type": "nominal"},
+		"size": {"value": 20}
+	}
+}
