@@ -3,8 +3,8 @@
 	"data": {
 		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac_datefixed.csv"
 	},
-	"width": 400,
-	"height": 250,
+	"width": 500,
+	"height": 256,
 	"title": "Total Deaths For Each Disaster",
 	"transform": [{"filter": "datum.date != NaN"}],
 		"mark": {
@@ -24,9 +24,7 @@
 				"domain": [10, 100, 1000, 10000, 100000, 200000],
 				"range": [5, 20, 50, 100, 300, 500, 800]
 			},
-			"legend": {
-				
-			}
+			"legend": null
 		},
 		"color": {
 			"field": "disastertype",

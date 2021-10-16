@@ -1,18 +1,40 @@
 
 .vis_body {
-	display: flex;
-	justify-content: center;
+	display: block;
 	width:100vw;
 }
 
-
-.centre_container {
+.vega-bind {
 	display: flex;
 	justify-content: center;
-	width: 80vw;
-	height: 250pt;
 }
 
-#select_countries {
+.centre_container {
+	position: relative;
+	display: block;
+	width: 90vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	height: 256pt;
+}
+
+.col_container {
+	display: inline-block;
+	width: 49%;
 	height: 100%;
+}
+
+input[type=range] {
+	width: 500pt;
+}
+
+#select_countries_container {
+	display:flex;
+	justify-content: center;
+}
+
+#map_container {
+	height: 512pt;
+	display:flex;
+	justify-content: center;
 }
