@@ -1,7 +1,7 @@
 {
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 	"data": {
-		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac.csv"
+		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac_datefixed.csv"
 	},
 	"title": "Deaths per Disaster",
 	"mark": {
