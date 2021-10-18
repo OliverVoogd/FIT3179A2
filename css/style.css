@@ -1,7 +1,8 @@
 
 .vis_body {
-	display: block;
-	width:100vw;
+	display: grid;
+	grid: 400px 400px 400px / auto auto;
+	width:98vw;
 }
 
 .vega-bind {
@@ -9,18 +10,46 @@
 	justify-content: center;
 }
 
+body {
+	background-color: #e5e5e5;
+}
+
+.heading {
+	text-align: center;
+}
+.heading h1 {
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	padding-left: 20%;
+	padding-right: 20%;
+	vertical-align: middle;
+}
+
+section {
+	display: flex;
+	width:100%;
+	height:100%;
+	align-items:center;
+	align-content:center;
+}
+
 .centre_container {
 	position: relative;
 	display: block;
 	width: 90vw;
 	padding-left: 5vw;
-	padding-right: 5vw;
+	padding-right: 3vw;
 	height: 256pt;
+	text-align: center;
+	
 }
 
 .col_container {
 	display: inline-block;
-	width: 49%;
 	height: 100%;
 }
 
@@ -31,10 +60,47 @@ input[type=range] {
 #select_countries_container {
 	display:flex;
 	justify-content: center;
+	padding-left: 0vw;
 }
 
 #map_container {
 	height: 512pt;
 	display:flex;
 	justify-content: center;
+}
+
+#line_chart {
+	padding-left: 30pt;
+}
+
+#select_countries {
+	padding-left: 40pt;
+}
+
+#choropleth {
+	padding-left: 80pt;
+}
+
+.floodtext {
+	color: #bebada
+}
+
+.droughtext {
+	color: #8dd3c7;
+}
+
+.earthquaketext {
+	color: #fdb462;
+}
+
+.landslidetext {
+	color: #fb8072
+}
+
+.voltext {
+	color: #80b1d3
+}
+
+.deathtext {
+	color: #8b0303;
 }

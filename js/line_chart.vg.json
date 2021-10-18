@@ -1,68 +1,174 @@
 {
-	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"title": "Number of Natural Disasters for Each Year",
-	"width": 500,
-	"data": {
-		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/summed_disastertype_year.csv"
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Number of Natural Disasters for Each Year",
+        "align": "right",
+        "font": "Roboto",
+		"fontSize": 16,
+		"color": "#1c1e1f",
+		"dx": 50
+    },
+    "background": "#e5e5e5",
+	"view": {
+		"fill": "#e5e5e5",
+		"stroke": null
 	},
-	"transform": [
-		{"filter": "datum.year >= 1980"}
-	],
-	"encoding": {
-		"x": {"field": "year", "type": "nominal", "title": "Year"},
-		"y": {"field": "count", "type": "quantitative", "title": "Number of Disasters"},
-		"color": {
-			"field": "disastertype",
-			"type": "nominal",
-			"scale": {"range": ["#8dd3c7", "#ffff99", "#bebada", "#fb8072", "#80b1d3"]},
-			"legend": {
-				
-				"title": "Disaster Type"
+    "width": 500,
+    "data": {
+        "url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/summed_disastertype_year.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.year >= 1980"
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "nominal",
+            "title": "Year",
+			"axis": {
+				"grid": false
 			}
-		},
-		"tooltip": [
-			{"field": "disastertype", "type": "nominal", "title": "Disaster"},
-			{"field": "year", "type": "nominal", "title": "Year"},
-			{"field": "count", "type": "quantitative", "title": "Total (year)"}
-		]
-	},
-	"layer": [
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Disasters",
+			"axis": {
+				"grid": false
+			}
+        },
+        "color": {
+            "field": "disastertype",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    "#8dd3c7",
+                    "#fdb462",
+                    "#bebada",
+                    "#fb8072",
+                    "#80b1d3"
+                ]
+            },
+            "legend": {
+                "title": "Disaster Type"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "disastertype",
+                "type": "nominal",
+                "title": "Disaster"
+            },
+            {
+                "field": "year",
+                "type": "nominal",
+                "title": "Year"
+            },
+            {
+                "field": "count",
+                "type": "quantitative",
+                "title": "Total (year)"
+            }
+        ]
+    },
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "DisasterTypeSelect2",
+                    "select": {
+                        "type": "point",
+                        "fields": [
+                            "disastertype"
+                        ]
+                    },
+                    "bind": "legend"
+                }
+            ],
+            "mark": {
+                "type": "line"
+            },
+            "encoding": {
+                "opacity": {
+                    "condition": {
+                        "param": "DisasterTypeSelect2",
+                        "value": 1
+                    },
+                    "value": 0.1
+                }
+            }
+        },
 		{
+			
 			"params": [
 				{
-					"name": "DisasterTypeSelect2",
-					"select": {"type": "point", "fields": ["disastertype"]},
-					"bind": "legend"
+					"name": "highlight",
+					"select": {"type": "point", "on": "mouseover"}
 				}
 			],
-			"mark": {"type": "line", "point": true},
+			"mark": "circle",
 			"encoding": {
-				"opacity": {
-					"condition": {"param": "DisasterTypeSelect2", "value": 1},
-					"value": 0.1
+				"size": {
+					"value": 30,
+					"condition": {"param": "highlight", "value": 80}
 				}
 			}
 		},
-		{
-			"transform": [
-				{
-					"window": [{"op": "rank", "as": "ranking"}],
-					"sort": [{"field": "count", "order": "descending"}]
-				},
-				{"filter": "datum.ranking == 1"},
-				{
-					"calculate": "'The most disasters in one year: ' + datum.count",
-					"as": "TextAnnotation"
-				}
-			],
-			"mark": {"type": "text", "align": "left", "dx": -180, "dy": 0},
-			"encoding": {
-				"text": {"field": "TextAnnotation"},
-				"opacity": {
-					"condition": {"param": "DisasterTypeSelect2", "value": 1},
-					"value": 0.1
-				}
-			}
+        {
+            "transform": [
+                {
+                    "window": [
+                        {
+                            "op": "rank",
+                            "as": "ranking"
+                        }
+                    ],
+                    "sort": [
+                        {
+                            "field": "count",
+                            "order": "descending"
+                        }
+                    ]
+                },
+                {
+                    "filter": "datum.ranking == 1"
+                },
+                {
+                    "calculate": "'The most disasters in one year: ' + datum.count",
+                    "as": "TextAnnotation"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -180,
+                "dy": 0
+            },
+            "encoding": {
+                "text": {
+                    "field": "TextAnnotation"
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "DisasterTypeSelect2",
+                        "value": 1
+                    },
+                    "value": 0.1
+                }
+            }
+        }
+    ],
+	"config": {
+		"axis": {
+			"labelColor": "darkslategray",
+			"tickColor": "darkslategray",
+			"titleColor": "darkslategray"
+		},
+		"legend": {
+			"titleColor": "darkslategray",
+			"labelColor": "darkslategray"
 		}
-	]
+	}
 }

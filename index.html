@@ -5,38 +5,66 @@
 	<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-	  
+	
 	  
 	<!--- Javascript file-->
 	<script src="js/embed_graphs.js"></script>
 	<!-- CSS file -->
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-</header>
-<body>
-	<h1>Assignment 2 Graph 2</h1>
 
-	<div class="vis_body">
+	<!-- Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</header>
+<body id="body">
+	<div class="heading">
+		<h1>Natural Disasters Around the World 1980-2018</h1>
+	</div>
+	
 		<div id="map_container" class="centre_container">
 			<div id="global_map"></div>
 		</div>
-		<div class="centre_container">
+
+	<div class="vis_body">
 			<div class="col_container">
-				<p>
-					This is where some text will go
-				</p>
+				<section>
+					<p>
+						On average, around 60,000 people are <span class="deathtext">killed</span> by natural disasters around the world.
+					<br><br>
+						Historically, <span class="floodtext">floods</span> and <span class="droughtext">droughts</span> were the most impactful, however now the most <span class="deathtext">deaths</span> are from 
+						<span class="earthquaketext">earthquakes</span>.
+
+					<br><br>
+						Disasters affect those in lower socioeconomic countries more. 
+						Higher <span class="deathtext">deaths</span> tolls tend to be located in such countries, which lack infrastructure to respond to
+						these events.
+						<br><br><br><br><br><br><br>
+					</p>
+				</section>
 			</div>
+
 			<div class="col_container"><div id="disasters_deaths"></div></div>
-		</div>
-		<div class="centre_container">
+
 			<div class="col_container">
-				<p>More text can go here</p>
-				<p>We can even do different paragraphs</p>
+				<section>
+					<p>
+						Over the last decade, around 60,000 people <span class="deathtext">died</span> from natural disasters each year.
+						<br><br>
+						Usually, most disaster don't result in many <span class="deathtext">deaths</span>. However, there are low frequency and high impact events, 
+						such as the 2010 Haiti <span class="earthquaketext">earthquake</span> and
+						the <span class="droughtext">drought</span> in Ethiopia in 1983, which cause devasting impacts.
+						<br><br><br><br><br><br><br><br><br><br>
+					</p>
+				</section>
 			</div>
 			<div class="col_container"><div id="line_chart"></div></div>
-		</div>
-		<div id="select_countries_container" class="centre_container">
-			<div id="select_countries"></div>
-		</div>
+
+
+
+			<div class="col_container"><div id="choropleth"></div></div>
+
+			<div class="col_container"><div id="select_countries"></div></div>
 	</div>
 </body>
 </html>

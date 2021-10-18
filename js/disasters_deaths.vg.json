@@ -1,41 +1,179 @@
 {
-	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-	"data": {
-		"url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac_datefixed.csv"
-	},
-	"width": 500,
-	"height": 256,
-	"title": "Total Deaths For Each Disaster",
-	"transform": [{"filter": "datum.date != NaN"}],
-		"mark": {
-		"type": "circle",
-		"stroke": "black",
-		"opacity": 0.5,
-		"strokeWidth": 0.2
-	},
-	"encoding": {
-		"x": {"field": "date", "type": "temporal", "title": "Year"},
-		"y": {"field": "disastertype", "type": "nominal", "title": ""},
-		"size": {
-			"field": "Total Deaths",
-			"type": "quantitative",
-			"scale": {
-				"type": "threshold", 
-				"domain": [10, 100, 1000, 10000, 100000, 200000],
-				"range": [5, 20, 50, 100, 300, 500, 800]
-			},
-			"legend": null
-		},
-		"color": {
-			"field": "disastertype",
-			"scale": {"scheme": "dark2"},
-			"legend": null
-		},
-		"tooltip": [
-			{"field": "country", "type": "nominal", "title": "Country"},
-			{"field": "location", "type": "nominal", "title": "Location"},
-			{"field": "date", "type": "temporal", "title": "Date"},
-			{"field": "Total Deaths", "type": "quantitative", "title": "Deaths"}
-		]
-	}
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/OliverVoogd/FIT3179A2/master/data/emdat_trimmed_joined_sedac_datefixed.csv"
+    },
+    "background": "#e5e5e5",
+    "width": 500,
+    "height": 256,
+    "title": {
+        "text": "Total Deaths For Each Disaster",
+        "align": "right",
+        "font": "Roboto",
+        "fontSize": 16,
+        "color": "#1c1e1f",
+        "dx": -30
+    },
+    "view": {
+        "stroke": null
+    },
+    "transform": [
+        {
+            "filter": "datum.date != NaN"
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "date",
+            "type": "temporal",
+            "title": "Year",
+            "axis": {
+                "grid": false
+            }
+        },
+        "y": {
+            "field": "disastertype",
+            "type": "nominal",
+            "title": ""
+        }
+    },
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "dotHover",
+                    "select": {
+                        "type": "point",
+                        "on": "mouseover"
+                    }
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "stroke": "black",
+                "opacity": 0.5,
+                "strokeWidth": 0.2
+            },
+            "encoding": {
+                "size": {
+                    "field": "Total Deaths",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            10,
+                            100,
+                            1000,
+                            10000,
+                            100000,
+                            200000
+                        ],
+                        "range": [
+                            5,
+                            20,
+                            50,
+                            100,
+                            300,
+                            500,
+                            800
+                        ]
+                    },
+                    "legend": null
+                },
+                "color": {
+                    "field": "disastertype",
+                    "scale": {
+                        "range": [
+                            "#8dd3c7",
+                            "#fdb462",
+                            "#bebada",
+                            "#fb8072",
+                            "#80b1d3"
+                        ]
+                    },
+                    "legend": null
+                },
+                "opacity": {
+                    "value": 0.01,
+                    "condition": {
+                        "param": "dotHover",
+                        "value": 1
+                    }
+                },
+                "stroke": {
+                    "value": "gray",
+                    "condition": {
+                        "param": "dotHover",
+                        "value": "black"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "location",
+                        "type": "nominal",
+                        "title": "Location"
+                    },
+                    {
+                        "field": "date",
+                        "type": "temporal",
+                        "title": "Date"
+                    },
+                    {
+                        "field": "Total Deaths",
+                        "type": "quantitative",
+                        "title": "Deaths"
+                    }
+                ]
+            }
+        },
+        {
+            "transform": [
+                {
+                    "window": [
+                        {
+                            "op": "rank",
+                            "as": "ranking"
+                        }
+                    ],
+                    "sort": [
+                        {
+                            "field": "Total Deaths",
+                            "order": "descending"
+                        }
+                    ]
+                },
+                {
+                    "filter": "datum.ranking == 1"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "align": "right",
+				"color": "#fdb462",
+                "dx": 10,
+                "dy": -70
+            },
+            "encoding": {
+                "text": {
+                    "value": "The most deaths from a single disaster"
+                }
+            }
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelColor": "darkslategray",
+            "tickColor": "darkslategray",
+            "titleColor": "darkslategray"
+        },
+        "legend": {
+            "titleColor": "darkslategray",
+            "labelColor": "darkslategray"
+        }
+    }
 }
